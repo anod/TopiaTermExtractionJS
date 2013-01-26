@@ -1,6 +1,8 @@
 Topia TermExtract 1.1.0 for JavaScript
 ======================================
 
+Port of python's package topia.termextract 1.1.0 to JavaScript
+
 ## Original package
 
 [topia.termextract 1.1.0][1] 
