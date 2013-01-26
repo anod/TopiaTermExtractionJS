@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>JavaScript port of python topia.termextract 1.1.0</title>
+<style>
+body {
+	padding: 5px;
+}
+div.block {
+	white-space: pre;
+	font-family: monospace; 
+	background-color:#EEE; 
+	padding: 5px;
+}
+div.line {
+	display:inline;
+}
+</style>
+</head>
+<body>
+	<h1>Example</h1>
+	<h2>Code:</h2>
+	<div class="block">
+<div class="line" id="file-js-topia-termextractor-example-LC1">&lt;script type="text/javascript" src="vendors/underscore-1.4.2-min.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC2">&lt;script type="text/javascript" src="vendors/backbone-0.9.2-min.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC3">	</div>
+<div class="line" id="file-js-topia-termextractor-example-LC4">&lt;script type="text/javascript" src="src/anod/topia/namespace.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC5">&lt;script type="text/javascript" src="src/anod/topia/lexicon.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC6">&lt;script type="text/javascript" src="src/anod/topia/defaultfilter.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC7">&lt;script type="text/javascript" src="src/anod/topia/tagger.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC8">&lt;script type="text/javascript" src="src/anod/topia/termextractor.js"&gt;&lt;/script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC9">	</div>
+<div class="line" id="file-js-topia-termextractor-example-LC10">&lt;script&gt;</div>
+<div class="line" id="file-js-topia-termextractor-example-LC11">	var tagger = new window.anod.Topia.Tagger({},{</div>
+<div class="line" id="file-js-topia-termextractor-example-LC12">		'lexicon' : window.anod.Topia.lexicon</div>
+<div class="line" id="file-js-topia-termextractor-example-LC13">	});</div>
+<div class="line" id="file-js-topia-termextractor-example-LC14">	var filter = new window.anod.Topia.DefaultFilter();</div>
+<div class="line" id="file-js-topia-termextractor-example-LC15">	var extractor = new window.anod.Topia.TermExtraction({</div>
+<div class="line" id="file-js-topia-termextractor-example-LC16">		'tagger' : tagger, 'filter' : filter</div>
+<div class="line" id="file-js-topia-termextractor-example-LC17">	});</div>
+<div class="line" id="file-js-topia-termextractor-example-LC18">	</div>
+<div class="line" id="file-js-topia-termextractor-example-LC19">	var tags = extractor.call(document.getElementById("source").innerHTML);</div>
+<div class="line" id="file-js-topia-termextractor-example-LC20">	tags.sort();</div>
+<div class="line" id="file-js-topia-termextractor-example-LC21">	document.getElementById("result").innerHTML = tags.join("&lt;br/&gt;");</div>
+<div class="line" id="file-js-topia-termextractor-example-LC22">&lt;/script&gt;</div>
+	</div>
+	<h2>Source text:</h2>
+	<div id="source" class="block">
+Police shut Palestinian theatre in Jerusalem.
+
+Israeli police have shut down a Palestinian theatre in East Jerusalem.
+
+The action, on Thursday, prevented the closing event of an international
+literature festival from taking place.
+
+Police said they were acting on a court order, issued after intelligence
+indicated that the Palestinian Authority was involved in the event.
+
+Israel has occupied East Jerusalem since 1967 and has annexed the
+area. This is not recognised by the international community.
+
+The British consul-general in Jerusalem , Richard Makepeace, was
+attending the event.
+
+"I think all lovers of literature would regard this as a very
+regrettable moment and regrettable decision," he added.
+
+Mr Makepeace said the festival's closing event would be reorganised to
+take place at the British Council in Jerusalem.
+
+The Israeli authorities often take action against events in East
+Jerusalem they see as connected to the Palestinian Authority.
+
+Saturday's opening event at the same theatre was also shut down.
+
+A police notice said the closure was on the orders of Israel's internal
+security minister on the grounds of a breach of interim peace accords
+from the 1990s.
+
+These laid the framework for talks on establishing a Palestinian state
+alongside Israel, but left the status of Jerusalem to be determined by
+further negotiation.
+
+Israel has annexed East Jerusalem and declares it part of its eternal
+capital.
+
+Palestinians hope to establish their capital in the area.
+	</div>
+	
+	<h2>Keywords:</h2>
+	<div id="result" class="block">
+	</div>
+	
+	<script type="text/javascript" src="vendors/underscore-1.4.2-min.js"></script>
+	<script type="text/javascript" src="vendors/backbone-0.9.2-min.js"></script>
+	
+	<script type="text/javascript" src="src/anod/topia/namespace.js"></script>
+	<script type="text/javascript" src="src/anod/topia/lexicon.js"></script>
+	<script type="text/javascript" src="src/anod/topia/defaultfilter.js"></script>
+	<script type="text/javascript" src="src/anod/topia/tagger.js"></script>
+	<script type="text/javascript" src="src/anod/topia/termextractor.js"></script>
+	
+	<script>
+		var tagger = new window.anod.Topia.Tagger({},{
+			'lexicon' : window.anod.Topia.lexicon
+		});
+		var filter = new window.anod.Topia.DefaultFilter();
+		var extractor = new window.anod.Topia.TermExtraction({
+			'tagger' : tagger, 'filter' : filter
+		});
+		
+		var tags = extractor.call(document.getElementById("source").innerHTML);
+		tags.sort();
+		document.getElementById("result").innerHTML = tags.join("<br/>");
+	</script>
+</body>
+</html>
